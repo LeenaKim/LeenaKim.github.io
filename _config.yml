@@ -1,44 +1,53 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Site Settings
+baseurl: ""
+url : "https://leenakim.github.io"
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: MatJek
-description: > # this means to ignore newlines until "baseurl:"
-  Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
-baseurl: "/matjek"
-url: "https://shawnteoh.github.io"
-permalink: /:year/:month/:day/:title
-repository: ShawnTeoh/matjek
+# Blog Settings
+theme_settings :
+  title : Leena Kim
+  favicon : assets/favicon.ico
+
+  # Profile Settings
+  profile :
+    image : assets/img/portfolio.jpeg
+    username : Leena Kim
+    description : Software developer
+    experience :
+      - start : 2021-01-08
+        end :
+        experience : Woori Bank, software engineer
+    skills :
+      - skill : JAVA
+        value : 80  # Percent value
+      - skill : JSP & JAVASCRIPT
+        value : 85  # Percent value
+      - skill : PYTHON
+        value : 70  # Percent value
+
+  # Icons
+  icons :
+    email:  tmxkvk94@gmail.com
+    linkedin:  https://www.linkedin.com/in/leena-kim-1bba9915a/
+    github: LeenaKim
+    gitlab:
+    bitbucket:
+    google_plus:
+    twitter:
+    youtube:
+    facebook:
+    instagram:
+
+  # Disqus
+  disqus_shortname :
+
+# Pagination
 paginate: 5
+paginate_path: "blog/page:num"
 
-# MatJek specific configurations
-github_profile: "https://github.com/LeenaKim"
-user: "Leena Kim"
-user_email: "tmxkvk94@gmail.com"
-contact_url: "https://goo.gl/tVljbV"
-categories: 글또6기 algorithms
-
-# Build settings
-markdown: kramdown
-gems:
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-sitemap
-exclude:
-  - Gemfile
-  - Gemfile.lock
+# Build Ssttings
 sass:
-  style: compressed
-future: true
+  sass_dir: _sass
+  style: :compressed
+gems: [jekyll-paginate]
+bootstrap:
+  assets: true
