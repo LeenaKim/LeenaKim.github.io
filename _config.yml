@@ -15,10 +15,10 @@ theme_settings :
     experience :
       - start : 2021-01-08
         end :
-        experience : Software Developer in finance, Republic of Korea
+        experience : Software Developer, Woori Financial Group
       - start : 2019-03-01
         end : 2019-09-01
-        experience : Visiting Intern Researcher, United States
+        experience : Visiting Intern Researcher, The Chicago Council on Global Affairs
     skills :
       - skill : JAVA
         value : 80  # Percent value
@@ -41,7 +41,7 @@ theme_settings :
     instagram:
 
   # Disqus
-  disqus_shortname :
+  disqus_shortname : Leena
 
 # Pagination
 paginate: 5
