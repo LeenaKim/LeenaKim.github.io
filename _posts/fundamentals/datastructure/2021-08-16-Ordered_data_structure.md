@@ -376,3 +376,9 @@ list[1]: 3
 - A basic linked memory structure is a Linked List, which consists of zero or more `ListNodes` lined together and a **head** pointer.
 - A linked list provides a flexible alternative to an array.
 
+
+
+# Array VS LinkedList
+
+- to be updated soon
+
