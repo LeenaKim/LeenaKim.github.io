@@ -441,7 +441,7 @@ cf) Amortized : to spend the constant time time by time
 
 - Array:
 
-  ![ASCF11](/assets/img/post_img/ACSF/ASCF11.png)
+  ![ACSF11](/assets/img/post_img/ACSF/ACSF11.png)
 
   - Why don't we start from the middle of the array if it's sorted?
   - We know that 17 is on the right side of 13. 
@@ -450,7 +450,7 @@ cf) Amortized : to spend the constant time time by time
 
 - List:
 
-  ![ASCF12](/assets/img/post_img/ACSF/ASCF12.png)
+  ![ACSF12](/assets/img/post_img/ACSF/ACSF12.png)
 
   - We can't jump to the middle of the list!
   - The best we can to is still travel the whole ListNodes!
@@ -464,14 +464,14 @@ cf) Amortized : to spend the constant time time by time
 
 - Array:
 
-  ![ASCF14](/assets/img/post_img/ACSF/ASCF14.png)
+  ![ACSF14](/assets/img/post_img/ACSF/ACSF14.png)
 
   - We have to copy the data that is already after the orange cube, move all data over, and once it's moved, we have room to insert the purple cube. 
   - We need to move n/2 elements -> `O(n)` of total moves. 
 
 - List:
 
-  ![ASCF15](/assets/img/post_img/ACSF/ASCF15.png)
+  ![ACSF15](/assets/img/post_img/ACSF/ACSF15.png)
 
   - We can just create new ListNode, put the blue one, and change the pointers!
   - => `O(1)`
