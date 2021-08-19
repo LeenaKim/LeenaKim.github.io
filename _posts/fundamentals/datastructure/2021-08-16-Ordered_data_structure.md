@@ -1,5 +1,5 @@
 ---
-layout: post
+the valayout: post
 title: <ACSF> [Week1 - Array & LinkedList] Ordered Data Structures
 subtitle : Accelerated Computer Science Fundamentals Specialization course from Coursera
 tags: [datastructure, coursera]
@@ -183,6 +183,12 @@ Found target at [2]
 
 - After add one more element that takes over the initial capacity (3), `vector` automatically double the capacity (6)
 - Memory separation : `cubes[2]` is two cubes after `cubes[0]` => 2 * 8bytes = 16 bytes 
+
+
+
+
+
+<hr>
 
 
 
@@ -378,57 +384,111 @@ list[1]: 3
 
 
 
-# Runtime Analysis
+<hr>
+
+
+
+## Runtime Analysis
 
 - It is important to know how the runtime is different by data structure.
 - Run-time Analysis allows us to formalize a method of comparing the speed of an algorithm as the size of input grows.
 
-
-
-## Objective: Access a given index:
-
-||Array|Linked List|
-|------|---|---|
-|Acces [3]|3 * 1 operation|3 operations|
-|Acces [4285]|4285 * 1 operation|4285 operations|
-|Acces [1250000]|테스트2|테스트3|
-|Based on n pieces of data:|n * 1 operation|n operations|
-
-
-
-## Array Resize Strategy
-
-### Objective: Resize an array:
-
-
-
-
-
-#### Strategy #1: When the array is full, add two to the capacity
-
-
-
-
-
-#### Strategy #2: When the array is full, <u>double</u> the capacity
-
-
-
-
-
-||Array - O(1)|Linked List - O(n)|
-|------|---|---|
-|테스트1Acces [3]| 1 formula    | Visits 4 ListNodes           |
-| Acces [4285]                   | 1 formula    | Visits 4,285 ListNodes       |
-| Acces [1250000]                | 1 formula    |Visits 1,250,000 ListNodes|
-|Based on **n** pieces of data:|1 formula|Visits up to **n** ListNodes|
-
-
-
-## Summary
-
 - Run-time Analysis allows us to formalize a method of comparing the speed of an algorithm as the size of input grows.
+
 - We summarize the runtime in "Big-O notation", leaving only the term that dominates the growth:
-  - O(1), constant time
-  - O(n), linear time
-  - O(n^2), polynomial time
+
+  - `O(1)`, constant time
+  - `O(n)`, linear time
+  - `O(n^2)`, *polynomial* time (다항의)
+
+  
+
+### Access a Given Index
+
+- Array : `O(1)` - Direct access via offset formula (using [] operation)
+- List : `O(n)` - Must traverse every element to reach the index
+
+
+
+### Insert at front
+
+(insert an element at the front)
+
+- Array : `O(1)*` - *Amortized* constant time when array size is doubled when copied
+- List : `O(1)` - Fixed constant time by adding the new data at the head of the list
+
+cf) Amortized : to spend the constant time time by time
+
+
+
+### Find Data
+
+(Given data, find the location of that data in the collection)
+
+- Array:
+  - I have no choice but start from first element and keep going until find the right data
+  - The time spent to find the right data would be equal to the amount of the data in the collection
+  - `O(n)`
+- List:
+  - Start from `head_` and travel through every single element until find the right data
+  - `O(n)`
+
+
+
+### Find Data in a Sorted Array
+
+(Given data, find the location of that data in the collection)
+
+- Array:
+
+  ![ASCF11](/assets/img/post_img/ACSF/ASCF11.png)
+
+  - Why don't we start from the middle of the array if it's sorted?
+  - We know that 17 is on the right side of 13. 
+  - Next, we know that 17 is on the left side of 19. 
+  - => This is called Binary Search. We cut it in half each time, and that's `O(lg~2(n))` operation.
+
+- List:
+
+  ![ASCF12](/assets/img/post_img/ACSF/ASCF12.png)
+
+  - We can't jump to the middle of the list!
+  - The best we can to is still travel the whole ListNodes!
+  - => even if the data is sorted, it's still `O(n)`
+
+
+
+### Insert After
+
+(Given an element (ListNode or index), insert a new element immediately afterwards)
+
+- Array:
+
+  ![ASCF14](/assets/img/post_img/ACSF/ASCF14.png)
+
+  - We have to copy the data that is already after the orange cube, move all data over, and once it's moved, we have room to insert the purple cube. 
+  - We need to move n/2 elements -> `O(n)` of total moves. 
+
+- List:
+
+  ![ASCF15](/assets/img/post_img/ACSF/ASCF15.png)
+
+  - We can just create new ListNode, put the blue one, and change the pointers!
+  - => `O(1)`
+
+
+
+### Delete After
+
+(Given an element (ListNode or Index), delete the element immediately afterwards)
+
+- Array: `O(n)` (same logic as insert after)
+- List: `O(1)` (same logic as insert after)
+
+
+
+### Array and List Operations
+
+- Arrays and Lists are both ordered collections that have complex tradeoffs between run-time and flexibility.
+- We will build data structures using these primitive structures.
+
