@@ -378,7 +378,57 @@ list[1]: 3
 
 
 
-# Array VS LinkedList
+# Runtime Analysis
 
-- to be updated soon
+- It is important to know how the runtime is different by data structure.
+- Run-time Analysis allows us to formalize a method of comparing the speed of an algorithm as the size of input grows.
 
+
+
+## Objective: Access a given index:
+
+||Array|Linked List|
+|------|---|---|
+|Acces [3]|3 * 1 operation|3 operations|
+|Acces [4285]|4285 * 1 operation|4285 operations|
+|Acces [1250000]|테스트2|테스트3|
+|Based on n pieces of data:|n * 1 operation|n operations|
+
+
+
+## Array Resize Strategy
+
+### Objective: Resize an array:
+
+
+
+
+
+#### Strategy #1: When the array is full, add two to the capacity
+
+
+
+
+
+#### Strategy #2: When the array is full, <u>double</u> the capacity
+
+
+
+
+
+||Array - O(1)|Linked List - O(n)|
+|------|---|---|
+|테스트1Acces [3]| 1 formula    | Visits 4 ListNodes           |
+| Acces [4285]                   | 1 formula    | Visits 4,285 ListNodes       |
+| Acces [1250000]                | 1 formula    |Visits 1,250,000 ListNodes|
+|Based on **n** pieces of data:|1 formula|Visits up to **n** ListNodes|
+
+
+
+## Summary
+
+- Run-time Analysis allows us to formalize a method of comparing the speed of an algorithm as the size of input grows.
+- We summarize the runtime in "Big-O notation", leaving only the term that dominates the growth:
+  - O(1), constant time
+  - O(n), linear time
+  - O(n^2), polynomial time
