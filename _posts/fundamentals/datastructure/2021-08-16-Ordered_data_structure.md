@@ -13,9 +13,8 @@ comments : true
 
 
 
-# Week 1
 
-## Arrays
+# Arrays
 
 - An array stores data in blocks of sequential memory
 
@@ -39,7 +38,7 @@ int main() {
 
 
 
-### Array Limitation #1
+## Array Limitation #1
 
 - All data in an array must be of the same type
 
@@ -116,7 +115,7 @@ int main() {
 
 
 
-### Array Limitation #2
+## Array Limitation #2
 
 - Arrays have a fixed **capacity**.
   - Arrays **must** store their data sequentially in memory.
@@ -192,7 +191,7 @@ Found target at [2]
 
 
 
-## Linked Memory
+# Linked Memory
 
 ![ACSF13](/assets/img/post_img/ACSF/ACSF13.png)
 
@@ -262,7 +261,7 @@ class List {
 
   
 
-### List::get
+## List::get
 
 - Objective : Return the element at index **k.**
 
@@ -299,7 +298,7 @@ const T & List<T>::operator[](unsigned index) {
 
 
 
-### List Runtime
+## List Runtime
 
 - In a list, the time it takes to access a given index grows based on the size of the list
   - In contrast, an array can access any element in a constant, fixed amount of time. Therefore, for accessing a given index, an array is faster than a list.
@@ -307,7 +306,7 @@ const T & List<T>::operator[](unsigned index) {
 
 
 
-### List::insert
+## List::insert
 
 - Objective: Add an element to the list
 
@@ -332,7 +331,7 @@ void List<T>::insertAtFront(const T & data) {
 
 
 
-### List Capacity
+## List Capacity
 
 - In a list, the **capacity** is bounded only by the memory available on the system. We can just add new elements again and again to the list.
   - In contrast, an array has a fixed capacity. A list is a more flexible data structure than an array.
@@ -376,7 +375,7 @@ list[1]: 3
 
 
 
-### Linked Memory (Summary)
+## Linked Memory (Summary)
 
 - Linked memory stores data in "nodes" linked together by "links" (pointers).
 - A basic linked memory structure is a Linked List, which consists of zero or more `ListNodes` lined together and a **head** pointer.
@@ -388,7 +387,7 @@ list[1]: 3
 
 
 
-## Runtime Analysis
+# Runtime Analysis
 
 - It is important to know how the runtime is different by data structure.
 - Run-time Analysis allows us to formalize a method of comparing the speed of an algorithm as the size of input grows.
@@ -403,14 +402,14 @@ list[1]: 3
 
   
 
-### Access a Given Index
+## Access a Given Index
 
 - Array : `O(1)` - Direct access via offset formula (using [] operation)
 - List : `O(n)` - Must traverse every element to reach the index
 
 
 
-### Insert at front
+## Insert at front
 
 (insert an element at the front)
 
@@ -421,7 +420,7 @@ cf) Amortized : to spend the constant time time by time
 
 
 
-### Find Data
+## Find Data
 
 (Given data, find the location of that data in the collection)
 
@@ -435,7 +434,7 @@ cf) Amortized : to spend the constant time time by time
 
 
 
-### Find Data in a Sorted Array
+## Find Data in a Sorted Array
 
 (Given data, find the location of that data in the collection)
 
@@ -458,7 +457,7 @@ cf) Amortized : to spend the constant time time by time
 
 
 
-### Insert After
+## Insert After
 
 (Given an element (ListNode or index), insert a new element immediately afterwards)
 
@@ -478,7 +477,7 @@ cf) Amortized : to spend the constant time time by time
 
 
 
-### Delete After
+## Delete After
 
 (Given an element (ListNode or Index), delete the element immediately afterwards)
 
@@ -487,7 +486,7 @@ cf) Amortized : to spend the constant time time by time
 
 
 
-### Array and List Operations
+## Array and List Operations
 
 - Arrays and Lists are both ordered collections that have complex tradeoffs between run-time and flexibility.
 - We will build data structures using these primitive structures.
