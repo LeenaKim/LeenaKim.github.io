@@ -103,6 +103,12 @@ Second pop(): Blue
 
 ### List-based
 
+![ACSF20](/assets/img/post_img/ACSF/ASCF20.png)
+
+- tail pointer : a pointer that accesses the last element of list
+- When we put the new element at the back of the list-based queue, we only need to change the pointer of new element to the last element. => `O(1)`
+- If we want to add a new element at the head of the queue, we only need to change the pointer of the head_ => `O(1)`
+
 
 
 ### Comparison
@@ -114,6 +120,8 @@ Second pop(): Blue
 |Push|O(1)* <br>Amortized runtime; <br>occasional need to double the capacity of the array. |O(1)|
 |Pop|O(1)* <br>Amortized runtime; <br>occasional need to shrink the size of the array to free unused memory. |O(1)|
 |Empty|O(1)|O(1)|
+
+- By using queue, a constant amount of operation time(O(1)) is guaranteed.
 
 
 
