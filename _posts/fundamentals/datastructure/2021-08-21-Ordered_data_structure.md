@@ -103,7 +103,7 @@ Second pop(): Blue
 
 ### List-based
 
-![ACSF20](/assets/img/post_img/ACSF/ASCF20.png)
+![ACSF20](/assets/img/post_img/ACSF/ACFS20.png)
 
 - tail pointer : a pointer that accesses the last element of list
 - When we put the new element at the back of the list-based queue, we only need to change the pointer of new element to the last element. => `O(1)`
