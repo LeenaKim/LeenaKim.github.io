@@ -55,7 +55,7 @@ comments : true
 - Trees must be rooted, directed, and acyclic
 - The relationship between nodes in a tree follow classical ancestry terms (parent, child, etc)
 
-
+<hr>
 
 # Binary Trees
 
