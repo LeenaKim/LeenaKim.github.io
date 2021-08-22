@@ -130,3 +130,71 @@ Second pop(): Blue
 - A queue is a first-in first-out data structure that is similar to waiting in a line.
 - A queue may be implemented with an array or a doubly-linked list.
   - Both an array-based and a list-based implementation can be built to run in constant, O(1) running time.
+
+<hr>
+
+# Stack
+
+- A stack is a **last-in first-out** data structure that is similar to pile ("stack") of papers.
+
+![ACSF21](/assets/img/post_img/ACSF/ACSF21.png)
+
+## Stack ADT
+
+- create : creates an empty stack
+- push : adds data to the top of the stack
+- pop : removes data from the top of the stack
+- empty : returns true if the stack is empty
+
+
+
+```c++
+#include <iostream>
+#include <stack>
+
+int main() {
+  // Create a std::stack:
+  std::stack<std::string> s;
+
+  // Add several strings to the stack:
+  s.push( "Orange" );
+  s.push( "Blue" );
+  s.push( "Illinois" );
+
+  // Print the front of the stack out and pop it off:
+  std::cout << "First pop(): " << s.top() << std::endl;
+  s.pop();
+
+  // Add another string and then print ouf the front of the stack:
+  s.push( "Illini" );
+  std::cout << "Second pop(): " << s.top() << std::endl;
+
+  return 0;
+}
+```
+
+output
+
+```
+First pop(): Illinois
+Second pop(): Illini
+```
+
+
+
+## Comparison
+
+|        | Array                                                        | Linked List |
+| ------ | ------------------------------------------------------------ | ----------- |
+| Create | O(1)                                                         | O(1)        |
+| Push   | O(1)* <br>Amortized runtime; <br>occasional need to double the capacity of the array. | O(1)        |
+| Pop    | O(1)* <br>Amortized runtime; <br>occasional need to shrink the size of the array to free unused memory. | O(1)        |
+| Empty  | O(1)                                                         | O(1)        |
+
+
+
+## Summary of Stack
+
+- A stack is a las-in first-out (LIFO) data structure that is similar to a pile ("stack") of papers.
+- A stack may be implemented with an array of a linked list.
+  - Both an array-based and a list-based implementation can be built to run in constant, O(1) running time.
