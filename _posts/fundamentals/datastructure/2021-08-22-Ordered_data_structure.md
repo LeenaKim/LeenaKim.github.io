@@ -144,3 +144,6 @@ class BinaryTree {
 
 - Binary Trees are a special case of a tree where each node has at most two children.
 - The children of binary trees are referred to as the "left child" and "right child".
+
+<hr>
+
