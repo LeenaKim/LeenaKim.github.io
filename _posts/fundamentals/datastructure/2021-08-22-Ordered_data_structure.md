@@ -197,7 +197,7 @@ void BinaryTree<T>::preOrder(TreeNode * cur) {
 
 - Left -> Shout -> Right
 
-![ACSF31](/assets/img/post_img/ACSF/ACSF31-9901556.png)
+![ACSF31](/assets/img/post_img/ACSF/ACSF31.png)
 
 ```c++
 template<class T>
@@ -240,7 +240,7 @@ void BinaryTree<T>::inOrder(TreeNode * cur) {
 
 - Left -> Right -> Shout
 
-![ACSF31](/assets/img/post_img/ACSF/ACSF31-9901562.png)
+![ACSF31](/assets/img/post_img/ACSF/ACSF31.png)
 
 
 
