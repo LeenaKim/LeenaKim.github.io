@@ -288,7 +288,7 @@ const D & Dictionary<K, D>::_remove(TreeNode *& node){
 
 - Binary Search Trees (BSTs) can take on many forms and structures, even containing the same data:
 
-
+![ACSF43](/assets/img/post_img/ACSF/ACSF43.png)
 
 - Both of them are correct Binary Search Tree in a sense that all nodes on the right side have bigger data than it's mother node, and on the left side have smaller data, but they have very different structure.
 
@@ -300,11 +300,11 @@ const D & Dictionary<K, D>::_remove(TreeNode *& node){
 
 
 
-
+![ACSF44](/assets/img/post_img/ACSF/ACSF44.png)
 
 - Insert Order: 4, 2, 3, 6, 7, 1, 5
 
-
+![ACSF45](/assets/img/post_img/ACSF/ACSF45.png)
 
 
 
@@ -328,13 +328,82 @@ const D & Dictionary<K, D>::_remove(TreeNode *& node){
 
 
 
-| Operation | BST Average Case | BST Worst Case | Sorted Array | Sorted List |
-| --------- | ---------------- | -------------- | ------------ | ----------- |
-| find      | O(lg(n))         | O(n)           | O(lg(n))     | O(n)        |
-| insert    |                  |                |              |             |
-| remove    |                  |                |              |             |
+| Operation | BST Average Case :) | BST Worst Case :( | Sorted Array | Sorted List |
+| --------- | ------------------- | ----------------- | ------------ | ----------- |
+| find      | O(lg(n))            | O(n)              | O(lg(n))     | O(n)        |
+| insert    | O(lg(n))            | O(n)              | O(n)         | O(n)        |
+| remove    | O(lg(n))            | O(n)              | O(n)         | O(n)        |
+
+![ACSF46](/assets/img/post_img/ACSF/ACSF46.png)
 
 - BST Worst Case
-  - It is a tree with the structure of linked list, linked as a one line
-  - It shoud visit all nodes to find the right data 
+  - Find : `O(n)`
+    - It is a tree with the structure of linked list, linked as a one line
+    - It shoud visit all nodes to find the right data, because in linked list, we can't skip any element data. 
+  - Insert & Remove : `O(n)`
+    - Remember that all of our operations depend upon find. So when we're finding an element
+      in a binary search tree, we insert it by just adding one more line of code. We remove it by just considering four particular cases that in itself only call find. So we find for a binary search
+      tree the running time of find is going to be the running time of both insert and remove, because insert and remove only do constant time operations after finding the element.
+- Sorted List
+  - Find : `O(n)`
+    - It also takes O(n) because it's a 'List'. We can't skip any element data.
+  - Insert & Remove : `O(n)`
+    - We should find the right place first, which takes O(n) so inserting and removing also take O(n).
+- Sorted Array
+  - Find : `O(lg(n))`
+    - We can jump right to the middle of the array, and if it's not the data that we're looking for, we can go left if it's less than the middle data, or go right if it's greater, because it's sorted!
+  - Insert & Remove : `O(n)`
+    -  sorted array, we've discussed the idea that an array has to be contiguous memory. So if we insert and we move from an array, this is going to be O(n) time.
+
+- BST Average Case
+  - Find : `O(lg(n))`
+    - The average BST case is a tree that has half of its elements on the right and half of its elements on the left. 
+  - Insert & Remove : `O(lg(n))`
+    - Remember that all of our operations depend upon find. So when we're finding an element
+      in a binary search tree, we insert it by just adding one more line of code. We remove it by just considering four particular cases that in itself only call find. So we find for a binary search
+      tree the running time of find is going to be the running time of both insert and remove, because insert and remove only do constant time operations after finding the element.
+
+- => The best algorithm which takes **O(lg(n))** at all operation types, find, insert, and remove is **BST Average Case.**
+
+
+
+# Height Balance Factor
+
+- The height balance factor (b) of a node is the difference in height between its two subtrees
+
+![ACSF47](/assets/img/post_img/ACSF/ACSF47.png)
+
+- b = height(TR) - h(TL)
+
+- Left tree : 1 -1 = 0 => this tree is perfectly balanced
+
+- Right Tree : 4 - (-1) = 5 => this tree is heavily biased to the right
+
+
+
+# Balanced BST
+
+- A balanced BST is a BST where **every node's** balance factor has a magnitude of **0 or 1**:
+
+- This means that all balance factor of all subtrees have either -**1, 0 or 1.** 
+
+![ACSF48](/assets/img/post_img/ACSF/ACSF48.png)
+
+- Left Tree : every subtrees have balance factor of 0, so it's balanced BST.
+- Right Tree : 
+  - node 6 : b = 0
+  - node 7 : b = -1
+  - node 5 : b = 2
+  - node 4 : b = 3
+  - node 3 : b = 3
+  - node 1 : b = 5
+
+
+
+# Summary of BST Analysis
+
+- There are **n!** different ways to create BSTs with the same data.
+  - The worst-case BST will have a height proportional to the number of nodes.
+  - An average BST(relatively balanced tree) will have a height proportional to the logarithm of the number of nodes.
+- Using a height balance factor, we can formalize if a given BST is balance. 
 
