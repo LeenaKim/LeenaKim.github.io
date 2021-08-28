@@ -280,3 +280,61 @@ const D & Dictionary<K, D>::_remove(TreeNode *& node){
 }
 ```
 
+
+
+<hr>
+
+# Binary Search Tree Analysis
+
+- Binary Search Trees (BSTs) can take on many forms and structures, even containing the same data:
+
+
+
+- Both of them are correct Binary Search Tree in a sense that all nodes on the right side have bigger data than it's mother node, and on the left side have smaller data, but they have very different structure.
+
+
+
+# BST Forms
+
+- Both trees contain the values {1, 2, 3, 4, 5, 6, 7}:
+
+
+
+
+
+- Insert Order: 4, 2, 3, 6, 7, 1, 5
+
+
+
+
+
+- Insert Order: 1, 3, 2, 4, 5, 7, 6
+
+
+
+- So, what is efficient BST? What is the best case and what is the worst case?
+
+
+
+# Puzzle
+
+- How many possible ways can we insert the same data into a BST?
+  - Let's say, we have numbers 1 2 3 4 5 6 7
+  - Let's say, we insert 5 as a root
+  - Now, we have choice of 6 other nodes to insert second. We can choose 2
+  - Now we have choice of 5 ... next we have choice of 4.. 3.. 2.. 1
+  - => number of possible way to insert these 7 numbers = 7 * 6 * 5 * 4 * 3 * 2 * 1 => 7!
+  - => **n!**
+
+
+
+| Operation | BST Average Case | BST Worst Case | Sorted Array | Sorted List |
+| --------- | ---------------- | -------------- | ------------ | ----------- |
+| find      | O(lg(n))         | O(n)           | O(lg(n))     | O(n)        |
+| insert    |                  |                |              |             |
+| remove    |                  |                |              |             |
+
+- BST Worst Case
+  - It is a tree with the structure of linked list, linked as a one line
+  - It shoud visit all nodes to find the right data
+
