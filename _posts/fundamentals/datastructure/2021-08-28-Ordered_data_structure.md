@@ -20,7 +20,7 @@ comments : true
   - nodes in the **left** subtree are **less** than itself
   - nodes in the **right** subtree are **greater** than itself
 
-![LeenaKim 33](2021-08-28-Ordered_data_structure.assets/LeenaKim 33.png)
+![ACSF33](/assets/img/post_img/ACSF/ACSF33.png)
 
 
 
@@ -47,7 +47,7 @@ comments : true
 
 - A BST used to implement a dictionary will store both a key and data at every node:
 
-![LeenaKim 34](2021-08-28-Ordered_data_structure.assets/LeenaKim 34.png)
+![ACSF34](/assets/img/post_img/ACSF/ACSF34.png)
 
 ```c++
 #pragma once
@@ -81,7 +81,7 @@ class Dictionary {
 
 # Example: Finding in a BST
 
-![LeenaKim 35](2021-08-28-Ordered_data_structure.assets/LeenaKim 35.png)
+![ACSF35](/assets/img/post_img/ACSF/ACSF35.png)
 
 - find(42)
 
@@ -113,7 +113,7 @@ class Dictionary {
 
 
 
-![LeenaKim 36](2021-08-28-Ordered_data_structure.assets/LeenaKim 36.png)
+![ACSF36](/assets/img/post_img/ACSF/ACSF36.png)
 
 - Let's think about worst-case outcome of fine
   - visiting the longest path which has same height of tree's height
@@ -147,7 +147,7 @@ typename Dictionary<K, D>::TreeNode*& Dictionary<K, D>::_find(
 
 # Insert into a BST
 
-![LeenaKim 37](2021-08-28-Ordered_data_structure.assets/LeenaKim 37.png)
+![ACSF37](/assets/img/post_img/ACSF/ACSF37.png)
 
 - insert(17)
   - All we need to do is to find a location of the data that we're inserting.
@@ -176,7 +176,7 @@ void Dictionary<K, D>::insert(const K& key, const D& data) {
 
 # Remove from a BST
 
-![LeenaKim 38](2021-08-28-Ordered_data_structure.assets/LeenaKim 38.png)
+![ACSF38](/assets/img/post_img/ACSF/ACSF38.png)
 
 - remove(42)
   - use `find()` function 
@@ -185,7 +185,7 @@ void Dictionary<K, D>::insert(const K& key, const D& data) {
 
 
 
-![LeenaKim 39](2021-08-28-Ordered_data_structure.assets/LeenaKim 39.png)
+![ACSF39](/assets/img/post_img/ACSF/ACSF39.png)
 
 - Remove(22)
   - 37 -> 19 -> 22
@@ -193,7 +193,7 @@ void Dictionary<K, D>::insert(const K& key, const D& data) {
   - But this again looks like a linked list, if we consider the fact that we just have nodes linked together like this, we know exactly how to repair this because we've repaired a linked list instead of simply deleting everything at this pointer and setting it equal to null, we delete the node and repair it by moving this pointer to the one child. 
   - One-child remove is easy case because it's like case of linked list.
 
-![LeenaKim 40](2021-08-28-Ordered_data_structure.assets/LeenaKim 40.png)
+![ACSF40](/assets/img/post_img/ACSF/ACSF40.png)
 
 - Remove(37) - two child
   - problem : 19 should be the root or 51 should be the root? And how can we repair this tree?
@@ -204,14 +204,14 @@ void Dictionary<K, D>::insert(const K& key, const D& data) {
 
 # In-Order Predecessor (IOP)
 
-![LeenaKim 41](2021-08-28-Ordered_data_structure.assets/LeenaKim 41.png)
+![ACSF41](/assets/img/post_img/ACSF/ACSF41.png)
 
 - The in-order predecessor is the previous node in an in-order traversal of a BST.
 - We'll say that we are going to replace the root of the tree with what we're going to refer to as the in-order predecessor of a given node, or the IOP.
 - The in-order predecessor of a node is going to be an in-order traversal of a binary search tree such that we choose the element that appears immediately before the route. (in-order traversal을 하다가 루트노드 직전에 마주치는 노드로 루트를 바꿈)
 - So, the route is 37, so the in-order predecessor is going to be that element 20 when we do an in-order traversal.
 
-![LeenaKim 42](2021-08-28-Ordered_data_structure.assets/LeenaKim 42.png)
+![ACSF42](/assets/img/post_img/ACSF/ACSF42.png)
 
 - Clever way to find IOP : the IOP of a node will **always** be the <u>right-most node in the node's left sub-tree</u>
 
