@@ -336,5 +336,5 @@ const D & Dictionary<K, D>::_remove(TreeNode *& node){
 
 - BST Worst Case
   - It is a tree with the structure of linked list, linked as a one line
-  - It shoud visit all nodes to find the right data
+  - It shoud visit all nodes to find the right data 
 
