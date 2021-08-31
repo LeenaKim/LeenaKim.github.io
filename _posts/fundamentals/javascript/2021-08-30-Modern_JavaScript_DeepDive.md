@@ -1,13 +1,13 @@
 ---
 the valayout: post
-title: [01-11] 모던 자바스크립트 Deep Dive
+title: [01~11] 모던 자바스크립트 Deep Dive
 subtitle : 모던 자바스크립트 Deep Dive 공부 
 tags: [javascript, book]
 author: Leena Kim
 comments : true
 ---
 
-< 모던 자바스크립트 Deep Dive 01-11 >
+< 모던 자바스크립트 Deep Dive 01~11 >
 
 
 
