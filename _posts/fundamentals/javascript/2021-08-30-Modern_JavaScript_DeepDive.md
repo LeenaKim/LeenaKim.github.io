@@ -7,7 +7,11 @@ author: Leena Kim
 comments : true
 ---
 
-< 모던 자바스크립트 Deep Dive 01~11 >
+![cover](/assets/img/post_img/Modern_js_Deep_Dive/modern_js_deep_dive_book_cover.png)
+
+
+
+< 모던 자바스크립트 Deep Dive 01~09 >
 
 
 
