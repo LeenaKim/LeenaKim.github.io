@@ -1,7 +1,7 @@
 ---
 the valayout: post
-title: <deepDive> [01~11] 모던 자바스크립트 Deep Dive
-subtitle : 모던 자바스크립트 Deep Dive 공부 
+title: <deepDive> [01~09] 모던 자바스크립트 Deep Dive
+subtitle : 모던 자바스크립트 Deep Dive 01~09
 tags: [javascript, book]
 author: Leena Kim
 comments : true
@@ -312,5 +312,430 @@ var template = `<ul>
 console.log(template);
 ```
 
+output
 
+```
+<ul>
+        <li><a href="#">Home</a></li>
+</ul>
+```
+
+<br>
+
+- 표현식 삽입
+
+```javascript
+var first = 'Ung-mo';
+var last = 'Lee';
+
+// 문자열 연결
+console.log('My name is ' + first + ' ' + last + '.');
+```
+
+템플릿 리터럴 내에서는 표현식 삽입을 통해 간단히 문자열을 삽입함으로서 문자열 연산자보다 가독성 좋게 간편하게 문자열을 조합할 수 있다.
+
+```javascript
+var first = 'Ung-mo';
+var last = 'Lee';
+
+// 표현식 삽입
+console.log(`My name is ${first} ${last}.`);
+```
+
+표현식을 삽입하려면 `${}` 으로 표현식을 감싼다. 이때 표현식의 평가 결과가 문자열이 아니더라도 문자열로 타입이 강제로 변환되어 삽입된다.
+
+```javascript
+console.log(`1 + 2 = ${1 + 2}`); // 1 + 2 = 3
+```
+
+<br>
+
+<br>
+
+## bool 타입
+
+True와 false로 이루어져있다. (자세한 내용 생략)
+
+
+
+<br>
+
+<br>
+
+## undefined 타입
+
+undefined는 개발자가 의도적으로 할당하기 위한 값이 아니라 자바스크립트 엔진이 변수를 초기화할 때 사용하는 값이다. 변수에 값이 없다는 것을 명시하고 싶을때는 undefined가 아니라 null을 할당한다. 
+
+
+
+<br>
+
+<br>
+
+## null 타입
+
+프로그래밍 언어에서 null은 변수에 값이 없다는 것을 의도적으로 명시(의도적 부재)할 때 사용한다. 변수에 null을 할당하는 것은 변수가 이전에 참조하던 값을 더 이상 참조하지 않겠다는 의미이다. 자바스크립트 엔진은 누구도 참조하지 않는 메모리 공간에 대해 가비지 콜렉션을 수행할 것이다. 
+
+<br>
+
+함수가 유효한 값을 반환할 수 없는 경우 명시적으로 null을 반환하기도 한다.
+
+```javascript
+var element = document.querySelector('.myClass');
+console.log(element); // null
+```
+
+
+
+<br>
+
+<br>
+
+## 심벌 타입
+
+심벌(symbol) 타입은 ES6(ECMSScript6)에서 추가된 7번째 타입으로, 변경 불가능한 원시 타입의 값이다. 다른 값과 중복되지 않는다. 따라서 주로 객체의 유일한 프로퍼티 키를 만들기 위해 사용한다. 
+
+```javascript
+// 심벌 값 생성
+var key = Symbol('key');
+console.log(typeof key); //symbol
+
+// 객체 생성
+var obj = {};
+
+// 이름이 충돌할 위험이 없는 유일무이한 값인 심벌을 프로퍼티 키로 사용한다.
+obj[key] = 'value';
+console.log(obj[key]); // value
+```
+
+<br>
+
+<br>
+
+## 객체 타입
+
+자바스크립트의 데이터 타입은 크게 원시 타입과 객체 타입으로 분류한다. 자바스크립트는 객체 기반 언어이며, 자바스크립트를 이루고 있는 거의 모든 것이 객체이다. 위의 6가지 데이터 타입 이외의 값은 모두 객체 타입이다. 
+
+
+
+<br>
+
+<br>
+
+데이터 타입이 필요한 이유
+
+- 값을 저장할 때 확보해야 하는 메모리 공간의 크기를 결정하기 위해
+- 값을 참조할 때 한 번에 읽어 들어야 할 메모리 공간의 크기를 결정하기 위해
+- 메모리에서 읽어 들인 2진수를 어떻게 해석할 지 결정하기 위해 
+
+<br>
+
+<br>
+
+## 동적 타이핑
+
+C나 자바같은 **정적 타입(static/strong type) 언어**는 변수를 선언할 때 변수에 할당할 수 있는 값의 종류, 즉 데이터 타입을 사전에 선언해야 한다. 이를 명시적 타입 선언(explicit type declaration)이라 한다. 
+
+```C
+char c;
+int num;
+```
+
+정적 타입 언어는 컴파일 시점에 타입 체크(선언한 데이터 타입에 맞는 값을 할당했는지 검사하는 처리)를 수행한다. 타입의 일관성을 강제함으로써 더욱 안정적인 코드의 구현을 통해 런타임에 발생하는 에러를 줄인다. 
+
+<br>
+
+자바스크립트는 정적 타입 언어와 다르게 변수를 선언할 때 타입을 선언하지 않는다. 다만 `var`, `let`, `const` 키워드를 사용해 변수를 선언할 뿐이다. 
+
+```javascript
+var goo;
+console.log(typeof foo); //undefined
+
+foo = 3;
+console.log(typeof foo); //number
+
+foo = 'Hello';
+console.log(typeof foo); //string
+
+foo = true;
+console.log(typeof foo); //boolean
+
+foo = null;
+console.log(typeof foo); //object
+
+foo = Symbol();
+console.log(typeof foo); //symbol
+
+foo = {}; //객체
+console.log(typeof foo); //object
+
+foo = []; //배열
+console.log(typeof foo); //object
+
+foo = function () {}; //함수
+console.log(typeof foo); //function
+```
+
+자바스크립트에서는 값을 할당하는 시점에 변수의 타입이 동적으로 결정되고 변수의 타입을 언제든지 자유롭게 변경할 수 있다. 즉, 자바스크립트의 변수는 **선언이 아닌 할당에 의해 타입이 결정(타입 추론(type inference))**된다. 그리고 **재할당에 의해 변수의 타입은 언제든지 동적으로 변할 수 있다**. 이러한 특징을 **동적 타이핑(dynamic typing)**이라고 하며, 자바스크립트를 정적 타입 언어와 굽려하기 위해 **동적 타입(dynamic/week type)** 언어라 한다. 
+
+<br>
+
+<br>
+
+## 동적 타입 언어와 변수
+
+동적 타입 언어에서 변수 값은 언제든지 변경될 수 있기 때문에 많은 위험이 도사린다. 다음은 변수를 사용할 때 주의사항이다.
+
+- 변수는 꼭 필요한 경우에 한해 제한적으로 사용한다.
+- 변수의 유효 범위(스코프)는 최대한 좁게 만들어 변수의 부작용을 억제해야 한다.
+- 전역 변수는 최대한 사용하지 않도록 한다. 
+- 변수보다는 상수를 사용해 값의 변경을 억제한다.
+- 변수 이름은 변수의 목적이나 의미를 파악할 수 있도록 네이밍한다. 
+
+<br>
+
+<br>
+
+<hr>
+
+<br>
+
+<br>
+
+# 타입 변환과 단축 평가
+
+## 타입 변환이란?
+
+개발자가 의도적으로 값의 타입을 변환하는 것을 **명시적 타입 변환** 또는 **타입 캐스팅**이라 한다. 
+
+```javascript
+var x = 10;
+
+// 명시적 타입 변환 - 숫자를 문자열로 타입 캐스팅
+var str = x.toString();
+console.log(typeof str, str); // string 10
+
+// x 변수의 값이 변경된 것은 아니다.
+console.log(typeof x, x); // number 10
+```
+
+<br>
+
+개발자의 의도와는 상관없이 표현식을 평가하는 도중에 자바스크립트 엔진에 의해 압묵적으로 타입이 자동 변환되기도 한다. 이를 **암묵적 타입 변환** 또는 **타입 강제 변환**이라 한다. 
+
+```javascript
+var x = 10;
+
+// 암묵적 타입 변환 - 문자열연결 연산자는 숫자 타입 x의 값을 바탕으로 새로운 문자열을 생성한다.
+var str = x + '';
+console.log(typeof str, str); // string 10
+```
+
+자신이 작성한 코드에서 압묵적 타입 변환이 발생하는지, 발생한다면 어떤 타입의 어떤 값으로 변환되는지, 그리고 타입 변환된 값으로 표현식이 어떻게 평가될 것인지 예측 가능해야 한다. 만약 타입 변환 결과를 예측하지 못하거나 예측이 결과와 일치하지 않는다면 오류를 생산할 가능성이 높아진다. 
+
+<br>
+
+중요한 것은 코드를 예측할 수 있어야 한다는 것이다. 동료가 작성한 코드를 자신이, 자신이 작성한 코드를 동료가 쉽게 이해할 수 있어야 한다. 
+
+<br>
+
+<br>
+
+## 암묵적 타입 변환
+
+- 문자열 타입으로 변환
+
+```javascript
+1 + '2' // -> '12'
+```
+
+위 예제의 + 연산자는 피연산자 중 하나 이상이 문자열이므로 문자열 연결 연산자로 작동하여 문자열 값을 만든다. 
+
+<br>
+
+- 숫자 타입으로 변환
+
+```javascript
+1 - '1' // -> 0
+1 * '10' // -> 10
+1 / 'one' // -> NaN
+```
+
+위 예제에서 사용한 연산자는 모두 산술 연산자다. 자바스크립트 엔진은 산술 연산자의 표현식을 평가하기 위해 산술 연산자의 피연산자 중에서 숫자 타입이 아닌 피연산자를 숫자 타입으로 암묵적 타입 변환한다. 
+
+```javascript
+'1' > 0 // -> true
+```
+
+'>' 비교연선자는 피연산자의 크기를 비교하므로 모든 피연산자는 코드의 문맥상 모두 숫자 타입이어야 한다. 자바스크립트 엔진은 비교 연산자 표현식을 평가하기 위해 비교 연산자의 피연산자 중에서 숫자 타입이 아닌 피연산자를 숫자 타입으로 암묵적 타입 변환한다. 
+
+<br>
+
+- 불리언 타입으로 변환
+
+```javascript
+if ('') console.log('1');
+if (true) console.log('2');
+if (0) console.log('3');
+if ('str') console.log('4');
+if (null) console.log('5');
+
+// 2 4
+```
+
+자바스크립트 엔진은 불리언 타입이 아닌 값을 Truthy 값(참으로 평가되는 값) 또는 Falsy 값(거짓으로 평가되는 값)으로 구분한다. 
+
+<br>
+
+<br>
+
+## 명시적 타입 변환
+
+- 문자열 타입으로 변환
+
+1. String 생성자 함수를 new 연산자 없이 호출하는 방법
+2. Object.prototype.toString 메서드를 사용하는 방법
+3. 문자열 연결 연산자를 이용하는 방법
+
+```javascript
+// 1. String 생성자 함수를 new 연산자 없이 호출하는 방법
+// 숫자 => 문자열
+String(1);				// "1"
+String(NaN);			// "NaN"
+String(Infinity);	// "Infinity"
+// 불리언 => 문자열
+String(true);			// "true"
+String(false);		// "false"
+
+// 2. Object.prototype.toString 메서드를 사용하는 방법
+// 숫자 => 문자열
+(1).toString();
+// 불리언 => 문자열
+(true).toString();
+
+// 3. 문자열 연결 연산자를 이용하는 방법
+1 + '';
+true + '';
+```
+
+<br>
+
+- 숫자 타입으로 변환
+
+1. Number 생성자 함수를 new 연산자 없이 호출하는 방법
+2. parseInt, parseFloat 함수를 사용하는 방법(문자열만 숫자 타입으로 변환 가능)
+3. '+' 단항 산술 연산자를 이용하는 방법
+4. '*' 산술 연산자를 이용하는 방법 
+
+```javascript
+// 1. Number 생성자 함수를 new 연산자 없이 호출하는 방법
+Number('0');
+Number(true);
+
+// 2. parseInt, parseFloat 함수를 사용하는 방법(문자열만 숫자 타입으로 변환 가능)
+parseInt('0');
+parseFloat('10.53');
+
+// 3. '+' 단항 산술 연산자를 이용하는 방법
++'0';
++'-1';
++true;	// 1
++false;	// 0
+```
+
+<br>
+
+- 불리언 타입으로 변환
+
+1. Boolean 생성자 함수를 new 연산자 없이 호출하는 방법
+2. ! 부정 논리 연산자를 두 번 사용하는 방법 
+
+```javascript
+// 1. Boolean 생성자 함수를 new 연산자 없이 호출하는 방법
+Boolean('x'); // true
+Boolean(''); // false
+Boolean('false'); // true
+Boolean(0); // false
+Boolean(1); // true
+Boolean(null); // false
+Boolean({}); // true
+// 2. ! 부정 논리 연산자를 두 번 사용하는 방법 
+!!'x'; // true
+!!''; // false
+...
+```
+
+<br>
+
+<br>
+
+## 단축 평가
+
+```javascript
+'Cat' && 'Dog' // "Dog"
+'Cat' || 'Dog' // "Cat"
+```
+
+논리곱 연산자는 논리 연산의 결과를 결정하는 두 번째 피연산자, 즉 문자열 'Dog'를 그대로 반환한다. 논리합 연산자는 논리 연산의 결과를 결정한 첫 번째 피연산자, 즉 문자열 'Cat'을 그대로 반환한다. 
+
+<br>
+
+논리곱 연산자와 논리합 연산자는 이처럼 논리 연산의 결과를 결정하는 피연산자를 타입 변환하지 않고 그대로 반환한다. 이를 **단축 평가**라 한다. 단축 평가는 표현식을 평가하는 도중에 평가 결과가 확정된 경우 나머지 평가 과정을 생략하는 것을 말한다.
+
+<br>
+
+| 단축 평가 표현식    | 평가 결과 |
+| ------------------- | --------- |
+| true \|\| anything  | true      |
+| false \|\| anything | anything  |
+| true && anything    | anything  |
+| false && anything   | false     |
+
+```javascript
+// 논리합(||) 연산자
+'Cat' || 'Dog' // Cat
+false || 'Dog' // Dog
+'Cat' || false // Cat
+
+// 논리곱(&&) 연산자
+'Cat' && 'Dog' // Dog
+false && 'Dog' // false
+'Cat' && 'Dog' // false
+```
+
+<br>
+
+이러한 단축 평가는 다음과 같은 상황에서 유용하게 사용된다.
+
+- 객체를 가리키기를 기대하는 변수가 null 또는 undefined가 아닌지 확인하고 프로퍼티를 참조할 때
+
+```javascript
+var elem = null;
+// elem이 null이나 undefined와 같은 Falsy 값이면 elem으로 평가되고
+// elem이 Truthy 값이면 elem.value로 평가된다. 
+var value = elem && elem.value; // null
+```
+
+<br>
+
+- 함수 매개변수에 기본값을 설정할 때
+
+```javascript
+// 단축 평가를 사용한 매개변수의 기본값 설정
+function getStringLength(str) {
+  str = str || '';
+  return str.length;
+}
+
+getStringLength(); // 0
+getStringLength('hi'); // 2
+
+// ES6의 매개변수의 기본값 설정
+function getStringLength(str = '') {
+  return str.length;
+}
+
+getStringLength(); // 0
+getStringLength('hi'); // 2
+```
 
