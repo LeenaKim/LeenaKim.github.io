@@ -743,3 +743,4 @@ getStringLength(); // 0
 getStringLength('hi'); // 2
 ```
 
+<br>
