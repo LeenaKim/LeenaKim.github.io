@@ -1,7 +1,7 @@
 ---
 the valayout: post
-title: <deepDive> [10~11] 모던 자바스크립트 Deep Dive
-subtitle : 모던 자바스크립트 Deep Dive 10~11
+title: <deepDive> [10] 모던 자바스크립트 Deep Dive
+subtitle : 모던 자바스크립트 Deep Dive 10
 tags: [javascript, book]
 author: Leena Kim
 comments : true
@@ -11,7 +11,7 @@ comments : true
 
 
 
-< 모던 자바스크립트 Deep Dive 10~ >
+< 모던 자바스크립트 Deep Dive 10장 >
 
 
 
