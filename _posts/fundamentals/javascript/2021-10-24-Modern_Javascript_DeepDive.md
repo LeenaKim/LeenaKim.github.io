@@ -1,6 +1,6 @@
 ---
 the valayout: post
-title: <deepDive> [12] 모던 자바스크립트 Deep Dive
+title: <deepDive> [12 함수] 모던 자바스크립트 Deep Dive
 subtitle : 모던 자바스크립트 Deep Dive 12
 tags: [javascript, book]
 author: Leena Kim
