@@ -1,6 +1,6 @@
 ---
 the valayout: post
-title: <deepDive> [11 원시 값과 객체의 비교] 모던 자바스크립트 Deep Dive
+title: <deepDive> [11장 - 원시 값과 객체의 비교] 모던 자바스크립트 Deep Dive
 subtitle : 모던 자바스크립트 Deep Dive 11
 tags: [javascript, book]
 author: Leena Kim
