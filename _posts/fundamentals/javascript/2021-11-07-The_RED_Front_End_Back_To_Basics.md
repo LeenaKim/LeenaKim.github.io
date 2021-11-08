@@ -1,6 +1,6 @@
 ---
 the valayout: post
-title: 1. 정체되지 않는 프론트엔드 개발자의 일하는 방식 
+title: [The RED 프론트엔드 Back to the Basics] 1. 정체되지 않는 프론트엔드 개발자의 일하는 방식 
 subtitle : The RED 프론트엔드 Back to the Basics 1
 tags: [javascript]
 author: Leena Kim
