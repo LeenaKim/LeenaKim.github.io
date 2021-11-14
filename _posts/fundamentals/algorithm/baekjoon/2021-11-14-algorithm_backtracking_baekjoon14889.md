@@ -1,6 +1,6 @@
 ---
 the valayout: post
-title: 백준 14889 : 스타트와 링크 (JAVA)
+title: 백준 14889 스타트와 링크 (JAVA)
 subtitle : 백트래킹
 tags: [algorithm]
 author: Leena Kim
