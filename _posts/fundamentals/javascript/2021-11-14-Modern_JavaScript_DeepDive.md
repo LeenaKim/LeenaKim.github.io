@@ -1,6 +1,6 @@
 ---
 the valayout: post
-title: <deepDive> [13장 - 스코프] 모던 자바스크립트 Deep Dive
+title: <deepDive> [13~15 스코프, 변수] 모던 자바스크립트 Deep Dive
 subtitle : 모던 자바스크립트 Deep Dive 13~15
 tags: [javascript, book]
 author: Leena Kim
